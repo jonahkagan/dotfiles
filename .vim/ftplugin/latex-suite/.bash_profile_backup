@@ -1,0 +1,18 @@
+# extend path
+export PATH=$PATH:/Users/Jonah/Documents/scripts
+
+# use vim line editing
+set -o vi
+
+# aliases
+alias komodo="open -a '/Applications/Komodo Edit.app'"
+alias textedit="open -a '/Applications/TextEdit.app'"
+alias preview="open -a '/Applications/Preview.app'"
+alias buds="cd ~/Documents/budsbud"
+alias prepare-for-dict="~/Desktop/crosswords/prepare-for-dict.py"
+alias drracket="open -a '/Applications/Racket v5.0.1/DrRacket.app'"
+alias sshcs="ssh jmkagan@ssh.cs.brown.edu"
+
+alias ls='ls -FG'
+#export CLICOLOR=1
+#export LSCOLORS=ExFxCxDxBxegedabagacad
