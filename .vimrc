@@ -17,7 +17,6 @@ call pathogen#helptags()
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" to load latex plugin
 filetype plugin on
 filetype indent on
 
@@ -58,7 +57,7 @@ vnoremap k gk
 " use hardwrap for markdown
 let g:pandoc_use_hard_wraps = 1
 
-" auto indent to 4 spaces
+" auto indent to # spaces
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -68,6 +67,10 @@ autocmd FileType ocaml set ts=2
 autocmd FileType ocaml set sts=2
 autocmd FileType ocaml set sw=2
 autocmd FileType ocaml set textwidth=90
+
+autocmd FileType tex,pandoc set ts=4
+autocmd FileType tex,pandoc set sts=4
+autocmd FileType tex,pandoc set sw=4
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -79,6 +82,8 @@ syntax enable
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 set background=dark
+" Terminal.app needs to have solarized installed, and use the ansi
+" terminal type
 colorscheme solarized
 "colo lucius
 

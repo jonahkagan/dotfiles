@@ -13,9 +13,11 @@ alias textedit="open -a '/Applications/TextEdit.app'"
 alias prepare-for-dict="~/Desktop/crosswords/prepare-for-dict.py"
 alias drracket="open -a '/Applications/Racket v5.1.3/DrRacket.app'"
 alias preview="open -a '/Applications/Preview.app'"
+alias ack="ack-5.12"
 alias sshvi="ssh jmkagan@ssh.cs.brown.edu ssh csadmin@virus-game.cs.brown.edu"
 alias cds="cd ~/Documents/spring2012"
 alias cdsym="cd ~/Documents/spring2012/research/LambdaS5/src"
+alias startmongo="sudo mongod -f /opt/local/etc/mongodb/mongod.conf"
 
 alias ls='ls -FG'
 alias ll="ls -al"
