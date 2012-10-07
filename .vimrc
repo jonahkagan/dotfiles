@@ -32,8 +32,8 @@ let maplocalleader = ","
 " set grepprg=grep\ -nH\ $*
 
 " Give a shortcut key to NERD Tree
-map <leader>e :NERDTreeToggle<CR>
-map <leader>f :NERDTreeFind<CR>
+"map <leader>e :NERDTreeToggle<CR>
+"map <leader>f :NERDTreeFind<CR>
 
 " compile to pdf and use preview
 let g:Tex_DefaultTargetFormat = 'pdf'
@@ -43,21 +43,28 @@ let g:Tex_ViewRule_pdf = 'open -a Preview'
 let g:tex_flavor='latex'
 
 " word wrap w/o line breaks
-set formatoptions=1
-set linebreak
+"set formatoptions=1
+"set linebreak
 " move within paragraph
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
+"vnoremap j gj
+"vnoremap k gk
 
 " make a shortcut to turn off all indentation
 "nnoremap <C-i> :setl noai nocin nosi inde=<CR>
 
 " use hardwrap for markdown
-let g:pandoc_use_hard_wraps = 1
+"let g:pandoc_use_hard_wraps = 1
+"let g:pandoc_auto_format = 1
+
+" soft wrapping for markdown
+autocmd FileType pandoc set tw=0
+" spell check
+autocmd FileType pandoc set spell
 
 " auto indent to # spaces
+set autoindent
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2

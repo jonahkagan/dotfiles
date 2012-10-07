@@ -1,5 +1,5 @@
 # extend path
-export PATH=$PATH:/Users/Jonah/Documents/scripts:/Users/Jonah/.gem/ruby/1.8/bin
+export PATH=$PATH:/Applications/Racket\ v5.3/bin:/Users/Jonah/Documents/scripts:/Users/Jonah/.gem/ruby/1.8/bin
 
 # use vim line editing
 set -o vi
@@ -16,8 +16,9 @@ alias preview="open -a '/Applications/Preview.app'"
 alias ack="ack-5.12"
 alias sshvi="ssh jmkagan@ssh.cs.brown.edu ssh csadmin@virus-game.cs.brown.edu"
 alias cds="cd ~/Documents/spring2012"
+alias cdf="cd ~/Documents/fall2012"
 alias cdsym="cd ~/Documents/spring2012/research/LambdaS5/src"
-alias startmongo="sudo mongod -f /opt/local/etc/mongodb/mongod.conf"
+alias mongo-start="sudo mongod -f /opt/local/etc/mongodb/mongod.conf"
 
 alias ls='ls -FG'
 alias ll="ls -al"

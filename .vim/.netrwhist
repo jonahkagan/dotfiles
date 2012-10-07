@@ -1,8 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/Jonah/Documents/me/src/projects/crosswords'
-let g:netrw_dirhist_2='/Users/Jonah/Documents/mewint/contents/scripts'
-let g:netrw_dirhist_3='/Users/Jonah/Documents/mejit/contents/projects/writing'
-let g:netrw_dirhist_4='/Users/Jonah/Documents/bob/app/views/templates'
-let g:netrw_dirhist_5='/Users/Jonah/Documents/bob/app/views/styles'
-let g:netrw_dirhist_6='/opt/local/etc/LaunchDaemons/org.macports.mongodb'
+let g:netrw_dirhist_cnt =0
