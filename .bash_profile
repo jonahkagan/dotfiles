@@ -7,6 +7,9 @@ set -o vi
 # safe rm
 alias rm="rm -i"
 
+# source nvm
+. ~/nvm/nvm.sh
+
 # aliases
 alias komodo="open -a '/Applications/Komodo Edit.app'"
 alias textedit="open -a '/Applications/TextEdit.app'"
@@ -74,3 +77,6 @@ for f in $(command ls ~/.node-completion); do
   test -f "$f" && . "$f"
 done
 # }}}
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

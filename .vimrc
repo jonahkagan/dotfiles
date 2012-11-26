@@ -8,14 +8,13 @@
 " Vim treats lines beginning with " as comments.
 "
 " EXAMPLES are available in /usr/local/doc/startups.
-"
-
-call pathogen#infect()
-call pathogen#helptags()
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+call pathogen#infect()
+call pathogen#helptags()
 
 filetype plugin on
 filetype indent on
@@ -118,7 +117,28 @@ nnoremap <silent> <Leader>o :CommandT<CR>
 let g:CommandTSelectPrevMap= ['<C-p>', '<C-k>', '<Esc>OA', '<Up>']
 let g:CommandTSelectNextMap= ['<C-n>', '<C-j>', '<Esc>OB', '<Down>']
 
-" Turn on autocomplete
+" Allow tab to be used for autocomplete
+function! SuperCleverTab()
+  if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
+      return "\<Tab>"
+  else
+      if &omnifunc != ''
+          return "\<C-X>\<C-O>"
+      elseif &dictionary != ''
+          return "\<C-K>"
+      else
+          return "\<C-N>"
+      endif
+  endif
+endfunction
+
+" Use tab for special autocomplete
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+
+" Remap default autocomplete trigger (not working!)
+"inoremap <C-space> <C-x><C-o>
+
+" Turn on autocomplete for various languages
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
