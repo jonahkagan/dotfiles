@@ -32,6 +32,7 @@ let maplocalleader = ","
 
 " disable folding
 set nofoldenable
+let g:vim_markdown_folding_disabled=1
 
 " keep the cursor away from the screen top/bottom
 set scrolloff=5
