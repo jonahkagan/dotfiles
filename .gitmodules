@@ -1,0 +1,9 @@
+[submodule ".vim/bundle/mustache"]
+	path = .vim/bundle/mustache
+	url = git://github.com/juvenn/mustache.vim.git
+[submodule ".vim/bundle/dustjs"]
+	path = .vim/bundle/dustjs
+	url = git://github.com/jimmyhchan/dustjs.vim.git
+[submodule ".vim/bundle/instant-markdown"]
+	path = .vim/bundle/instant-markdown
+	url = git://github.com/suan/vim-instant-markdown.git

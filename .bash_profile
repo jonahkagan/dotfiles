@@ -1,36 +1,57 @@
 # extend path
-export PATH=$PATH:/Applications/Racket\ v5.3/bin:/Users/Jonah/Documents/scripts:/Users/Jonah/.gem/ruby/1.8/bin
+export PATH=$PATH:/Applications/Racket/bin
+export PATH=$PATH:$HOME/.gem/ruby/1.8/bin
+export PATH=$PATH:$HOME/.cabal/bin
+export PATH=$PATH:/Applications/CoqIdE_8.4.app/Contents/Resources/bin
 
 # use vim line editing
 set -o vi
 
-# safe rm
-alias rm="rm -i"
+# the path to the working directory (up to three dirs long)
+# http://www.reddit.com/r/programming/comments/697cu/bash_users_what_do_you_have_for_your_ps1/c0382ne
+pwd_three() {
+  echo ${PWD} | sed "s&${HOME}&~&" | sed "s&.*./\([^/]*/[^/]*/[^/]*\)$&\1&"
+}
+# change command prompt
+export PS1='$(pwd_three) \$ '
+
+# init opam
+#which opam && eval `opam config -env`
 
 # source nvm
-. ~/nvm/nvm.sh
+. ~/.nvm/nvm.sh
 
-# aliases
+# App aliases
 alias komodo="open -a '/Applications/Komodo Edit.app'"
 alias textedit="open -a '/Applications/TextEdit.app'"
 alias prepare-for-dict="~/Desktop/crosswords/prepare-for-dict.py"
-alias drracket="open -a '/Applications/Racket v5.1.3/DrRacket.app'"
+alias drracket="open -a '/Applications/Racket-v5.3.2/DrRacket.app'"
 alias preview="open -a '/Applications/Preview.app'"
-alias ack="ack-5.12"
+alias ack="ack-5.12 --follow"
+
+# Convenience aliases
 alias sshvi="ssh jmkagan@ssh.cs.brown.edu ssh csadmin@virus-game.cs.brown.edu"
-alias cds="cd ~/Documents/spring2012"
-alias cdf="cd ~/Documents/fall2012"
-alias cdsym="cd ~/Documents/spring2012/research/LambdaS5/src"
+alias cdd="cd ~/Documents/spring2013"
 alias mongo-start="sudo mongod -f /opt/local/etc/mongodb/mongod.conf"
 
+# Port aliases
+#alias ack="ack-5.12"
+alias pip="pip-2.7"
+
+# Bash stuff
 alias ls='ls -FG'
-alias ll="ls -al"
+alias ll="ls -alh"
 export CLI_COLOR=1
 export LS_COLORS=ExFxCxDxBxegedabagacad
 
+# Import Clever settings
+source ~/.clever_bash
+
+# safe rm
+#alias rm="rm -i"
 function del() {
 while [ -n "$1" ]; do
-  if [ ! -e "$1" ]; then
+  if [ ! -e "$1" -a ! -h "$1" ]; then
     echo "'$1' not found; exiting"
     return
   fi
@@ -60,23 +81,14 @@ done
 }
 alias rm='del'
 
-##
-# Your previous /Users/Jonah/.bash_profile file was backed up as /Users/Jonah/.bash_profile.macports-saved_2010-12-08_at_22:16:11
-##
-
 # MacPorts Installer addition on 2010-12-08_at_22:16:11: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# For Homebrew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+

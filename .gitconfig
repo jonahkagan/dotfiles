@@ -1,0 +1,22 @@
+[user]
+	name = jonahkagan
+	email = jonahkagan@gmail.com
+
+[alias]
+  st = status
+  c = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+
+[credential]
+	helper = osxkeychain
+
+[push]
+	default = simple

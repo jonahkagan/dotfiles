@@ -14,12 +14,12 @@
 set nocompatible
 
 call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#helptags()
 
 filetype plugin on
 filetype indent on
 
-set textwidth=70
+set textwidth=79
 
 "set number
 set ruler
@@ -29,6 +29,12 @@ let maplocalleader = ","
 
 " something else for latex
 " set grepprg=grep\ -nH\ $*
+
+" disable folding
+set nofoldenable
+
+" keep the cursor away from the screen top/bottom
+set scrolloff=5
 
 " Give a shortcut key to NERD Tree
 "map <leader>e :NERDTreeToggle<CR>
@@ -41,26 +47,27 @@ let g:Tex_ViewRule_pdf = 'open -a Preview'
 " one last thing for latex
 let g:tex_flavor='latex'
 
-" word wrap w/o line breaks
-"set formatoptions=1
-"set linebreak
 " move within paragraph
-"nnoremap j gj
-"nnoremap k gk
-"vnoremap j gj
-"vnoremap k gk
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " make a shortcut to turn off all indentation
 "nnoremap <C-i> :setl noai nocin nosi inde=<CR>
 
-" use hardwrap for markdown
+" use hardwrap for mkd
 "let g:pandoc_use_hard_wraps = 1
 "let g:pandoc_auto_format = 1
+"let g:pandoc_no_folding = 1
 
-" soft wrapping for markdown
-autocmd FileType pandoc set tw=0
+" soft wrapping for mkd
+"set formatoptions=1
+autocmd FileType mkd,pandoc setlocal wrap
+autocmd FileType mkd,pandoc setlocal linebreak
+autocmd FileType mkd,pandoc setlocal tw=0
 " spell check
-autocmd FileType pandoc set spell
+autocmd FileType mkd,pandoc setlocal spell
 
 " auto indent to # spaces
 set autoindent
@@ -69,14 +76,16 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-autocmd FileType ocaml set ts=2
-autocmd FileType ocaml set sts=2
-autocmd FileType ocaml set sw=2
-autocmd FileType ocaml set textwidth=90
+"autocmd FileType ocaml set ts=2
+"autocmd FileType ocaml set sts=2
+"autocmd FileType ocaml set sw=2
+"autocmd FileType ocaml set textwidth=90
 
-autocmd FileType tex,pandoc set ts=4
-autocmd FileType tex,pandoc set sts=4
-autocmd FileType tex,pandoc set sw=4
+au BufReadPost *.arr set filetype=pyret
+
+autocmd FileType tex,pandoc,mkd setlocal ts=4
+autocmd FileType tex,pandoc,mkd setlocal sts=4
+autocmd FileType tex,pandoc,mkd setlocal sw=4
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -117,23 +126,23 @@ nnoremap <silent> <Leader>o :CommandT<CR>
 let g:CommandTSelectPrevMap= ['<C-p>', '<C-k>', '<Esc>OA', '<Up>']
 let g:CommandTSelectNextMap= ['<C-n>', '<C-j>', '<Esc>OB', '<Down>']
 
-" Allow tab to be used for autocomplete
-function! SuperCleverTab()
-  if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-      return "\<Tab>"
-  else
-      if &omnifunc != ''
-          return "\<C-X>\<C-O>"
-      elseif &dictionary != ''
-          return "\<C-K>"
-      else
-          return "\<C-N>"
-      endif
-  endif
-endfunction
+"" Allow tab to be used for autocomplete
+"function! SuperCleverTab()
+"  if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
+"      return "\<Tab>"
+"  else
+"      if &omnifunc != ''
+"          return "\<C-X>\<C-O>"
+"      elseif &dictionary != ''
+"          return "\<C-K>"
+"      else
+"          return "\<C-N>"
+"      endif
+"  endif
+"endfunction
 
-" Use tab for special autocomplete
-inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+"" Use tab for special autocomplete
+"inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 " Remap default autocomplete trigger (not working!)
 "inoremap <C-space> <C-x><C-o>
@@ -146,15 +155,15 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 if has("autocmd")
 
-" Have Vim jump to the last position when reopening a file
+  " Have Vim jump to the last position when reopening a file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 
-" Remove trailing whitespace on write for some filetypes
+  " Remove trailing whitespace on write for some filetypes
   "autocmd FileType js,ocaml,html,css autocmd BufWritePre <buffer> :%s/\s\+$//e
 
-" Have Vim load indentation rules according to the detected filetype. Per
-" default Debian Vim only load filetype specific plugins.
+  " Have Vim load indentation rules according to the detected filetype. Per
+  " default Debian Vim only load filetype specific plugins.
   filetype indent on
 
 endif

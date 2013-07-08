@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/Jonah/Documents/mejit/prod/build'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/jonahkagan/projects/me/front/contents/projects/donnerparty'
+let g:netrw_dirhist_2='/Users/jonahkagan/Documents/spring2013/research/pyret-lang/src/lang/pyret-lib/experimental'
+let g:netrw_dirhist_3='/Users/jonahkagan/.dotfiles/.vim/bundle/nerdcommenter'
