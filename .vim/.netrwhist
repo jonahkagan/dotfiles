@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/jonahkagan/projects/me/front/contents/projects/donnerparty'
 let g:netrw_dirhist_2='/Users/jonahkagan/Documents/spring2013/research/pyret-lang/src/lang/pyret-lib/experimental'
 let g:netrw_dirhist_3='/Users/jonahkagan/.dotfiles/.vim/bundle/nerdcommenter'
+let g:netrw_dirhist_4='/Users/jonahkagan/dev/clever-agents/workers/cron_balancer'
+let g:netrw_dirhist_5='/Users/jonahkagan/dev/clever-db/test/helpers'
+let g:netrw_dirhist_6='/Users/jonahkagan/dev/clever-db/test/validators'
+let g:netrw_dirhist_7='/Users/jonahkagan/dev/clever-db/test'
+let g:netrw_dirhist_8='/Users/jonahkagan/dev/clever-db'
+let g:netrw_dirhist_9='/Users/jonahkagan/dev/clever-db/lib/schemas/validators'

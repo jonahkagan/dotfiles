@@ -19,7 +19,10 @@ export PS1='$(pwd_three) \$ '
 #which opam && eval `opam config -env`
 
 # source nvm
-. ~/.nvm/nvm.sh
+. ~/nvm/nvm.sh
+
+# alias hub to `git`
+eval "$(hub alias -s)"
 
 # App aliases
 alias komodo="open -a '/Applications/Komodo Edit.app'"
@@ -27,16 +30,14 @@ alias textedit="open -a '/Applications/TextEdit.app'"
 alias prepare-for-dict="~/Desktop/crosswords/prepare-for-dict.py"
 alias drracket="open -a '/Applications/Racket-v5.3.2/DrRacket.app'"
 alias preview="open -a '/Applications/Preview.app'"
-alias ack="ack-5.12 --follow"
 
 # Convenience aliases
 alias sshvi="ssh jmkagan@ssh.cs.brown.edu ssh csadmin@virus-game.cs.brown.edu"
-alias cdd="cd ~/Documents/spring2013"
 alias mongo-start="sudo mongod -f /opt/local/etc/mongodb/mongod.conf"
 
 # Port aliases
-#alias ack="ack-5.12"
-alias pip="pip-2.7"
+#alias ack="ack-5.12 --follow"
+#alias pip="pip-2.7"
 
 # Bash stuff
 alias ls='ls -FG'

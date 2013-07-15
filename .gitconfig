@@ -1,6 +1,6 @@
 [user]
 	name = jonahkagan
-	email = jonahkagan@gmail.com
+	email = jonah.kagan@getclever.com
 
 [alias]
   st = status
@@ -20,3 +20,5 @@
 
 [push]
 	default = simple
+[hub]
+	protocol = https

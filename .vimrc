@@ -34,6 +34,9 @@ let maplocalleader = ","
 set nofoldenable
 let g:vim_markdown_folding_disabled=1
 
+" only refresh on save
+let g:instant_markdown_slow = 1
+
 " keep the cursor away from the screen top/bottom
 set scrolloff=5
 
@@ -118,6 +121,11 @@ nmap <Leader>vs :source $MYVIMRC<CR>
 
 " No more shift for commands!
 nnoremap ; :
+
+" Show trailing whitespace
+nmap <Leader>ww /\s\+$<CR>
+" Remove trailing whitespace
+nmap <Leader>wd :%s/\s\+$//<CR>
 	
 " Capture ESC for CommandT
 let g:CommandTCancelMap = ['<ESC>', '<C-c>']
