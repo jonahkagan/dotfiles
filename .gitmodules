@@ -1,12 +1,3 @@
-[submodule ".vim/bundle/mustache"]
-	path = .vim/bundle/mustache
-	url = git://github.com/juvenn/mustache.vim.git
-[submodule ".vim/bundle/dustjs"]
-	path = .vim/bundle/dustjs
-	url = git://github.com/jimmyhchan/dustjs.vim.git
-[submodule ".vim/bundle/instant-markdown"]
-	path = .vim/bundle/instant-markdown
-	url = git://github.com/suan/vim-instant-markdown.git
 [submodule ".vim/bundle/command-t"]
 	path = .vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
@@ -28,6 +19,3 @@
 [submodule ".vim/bundle/dash.vim"]
 	path = .vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
-[submodule "vim-instant-markdown"]
-	path = vim-instant-markdown
-	url = https://github.com/suan/vim-instant-markdown
