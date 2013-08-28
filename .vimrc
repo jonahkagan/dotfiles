@@ -23,6 +23,8 @@ set textwidth=79
 
 "set number
 set ruler
+" always show status line
+set laststatus=2
 
 let mapleader = ","
 let maplocalleader = ","
@@ -106,6 +108,10 @@ set background=dark
 colorscheme solarized
 "colo lucius
 
+" keep swap files hidden away
+set backupdir=$HOME/.vim_swap//,/tmp
+set directory=$HOME/.vim_swap//,/tmp
+
 " Switch buffers with double comma
 map <Leader><Leader> <C-w>w
 
@@ -134,6 +140,9 @@ nnoremap <silent> <Leader>o :CommandT<CR>
 " Capture up and down keys - they read as EscO?
 let g:CommandTSelectPrevMap= ['<C-p>', '<C-k>', '<Esc>OA', '<Up>']
 let g:CommandTSelectNextMap= ['<C-n>', '<C-j>', '<Esc>OB', '<Down>']
+
+" Make a Mongo query filetype
+autocmd BufNewFile,BufReadPost *.mql setlocal filetype=mongoql
 
 "" Allow tab to be used for autocomplete
 "function! SuperCleverTab()
