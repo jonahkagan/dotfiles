@@ -42,6 +42,7 @@ let g:instant_markdown_slow = 1
 " keep the cursor away from the screen top/bottom
 set scrolloff=5
 
+autocmd QuickFixCmdPost *grep* cwindow
 " Give a shortcut key to NERD Tree
 "map <leader>e :NERDTreeToggle<CR>
 "map <leader>f :NERDTreeFind<CR>
@@ -75,23 +76,19 @@ autocmd FileType mkd,pandoc setlocal tw=0
 " spell check
 autocmd FileType mkd,pandoc setlocal spell
 
-" auto indent to # spaces
+function SetIndentSpaces(n)
+  let &tabstop = a:n
+  let &softtabstop = a:n
+  let &shiftwidth = a:n
+endfunction
+
+" auto indent to 2 spaces
 set autoindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+call SetIndentSpaces(2)
 set expandtab
 
-"autocmd FileType ocaml set ts=2
-"autocmd FileType ocaml set sts=2
-"autocmd FileType ocaml set sw=2
-"autocmd FileType ocaml set textwidth=90
-
-au BufReadPost *.arr set filetype=pyret
-
-autocmd FileType tex,pandoc,mkd setlocal ts=4
-autocmd FileType tex,pandoc,mkd setlocal sts=4
-autocmd FileType tex,pandoc,mkd setlocal sw=4
+autocmd FileType tex,pandoc,mkd call SetIndentSpaces(4)
+autocmd BufNewFile,BufReadPost *.coffee.md call SetIndentSpaces(4)
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -117,8 +114,8 @@ map <Leader><Leader> <C-w>w
 
 " Highlight search terms
 set hlsearch
-" Clear the search buffer with Enter
-nmap <CR> :let @/ = ""<CR>
+" Clear the search buffer with double slash
+nmap // :let @/ = ""<CR>
 
 " Easy edit of vimrc
 nmap <Leader>vv :e $MYVIMRC<CR>
