@@ -23,13 +23,13 @@ bind w:ctrl;cmd nudge +0   -5%
 bind s:ctrl;cmd nudge +0   +5%
 
 # Throw Bindings
-bind 1:ctrl;alt         throw 0 resize
-bind 2:ctrl;alt         throw 1 resize
-bind 3:ctrl;alt         throw 2 resize
-bind right:ctrl;alt;cmd throw right
-bind left:ctrl;alt;cmd  throw left
-bind up:ctrl;alt;cmd    throw up
-bind down:ctrl;alt;cmd  throw down
+bind 1:ctrl;shift         throw 0 resize
+bind 2:ctrl;shift         throw 1 resize
+bind 3:ctrl;shift         throw 2 resize
+bind right:ctrl;shift;cmd throw right
+bind left:ctrl;shift;cmd  throw left
+bind up:ctrl;shift;cmd    throw up
+bind down:ctrl;shift;cmd  throw down
 
 # Window Hints
 bind esc:cmd hint

@@ -4,11 +4,13 @@
 
 [alias]
   st = status
-  c = commit
+  commit = commit -v
+  c = commit -v
   br = branch
   co = checkout
-  df = diff
   lg = log -p
+  d = diff
+  ds = diff --staged
 
 [color]
   branch = auto

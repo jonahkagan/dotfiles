@@ -13,7 +13,8 @@ pwd_three() {
   echo ${PWD} | sed "s&${HOME}&~&" | sed "s&.*./\([^/]*/[^/]*/[^/]*\)$&\1&"
 }
 # change command prompt
-export PS1='$(pwd_three) \$ '
+#export PS1='$(pwd_three) \e[0;35m\$\e[m '
+export PS1='$(pwd_three) \[$(tput setaf 5)\]\$\[$(tput sgr0)\] '
 
 # init opam
 #which opam && eval `opam config -env`
@@ -23,6 +24,8 @@ export PS1='$(pwd_three) \$ '
 
 # alias hub to `git`
 eval "$(hub alias -s)"
+
+set show-all-if-ambiguous on
 
 # App aliases
 alias komodo="open -a '/Applications/Komodo Edit.app'"
@@ -38,6 +41,9 @@ alias mongo-start="sudo mongod -f /opt/local/etc/mongodb/mongod.conf"
 # Port aliases
 #alias ack="ack-5.12 --follow"
 #alias pip="pip-2.7"
+
+alias ack="ack --ignore-dir node_modules"
+alias acknm='ack --noignore-dir=node_modules'
 
 # Bash stuff
 alias ls='ls -FG'
