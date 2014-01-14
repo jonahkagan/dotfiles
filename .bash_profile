@@ -12,9 +12,16 @@ set -o vi
 pwd_three() {
   echo ${PWD} | sed "s&${HOME}&~&" | sed "s&.*./\([^/]*/[^/]*/[^/]*\)$&\1&"
 }
+# http://martinfitzpatrick.name/article/add-git-branch-name-to-terminal-prompt-mac
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
 # change command prompt
 #export PS1='$(pwd_three) \e[0;35m\$\e[m '
-export PS1='$(pwd_three) \[$(tput setaf 5)\]\$\[$(tput sgr0)\] '
+PS1='$(pwd_three)'
+PS1=$PS1' ($(parse_git_branch))'
+PS1=$PS1' \[$(tput setaf 5)\]\$\[$(tput sgr0)\] '
+export PS1
 
 # init opam
 #which opam && eval `opam config -env`
