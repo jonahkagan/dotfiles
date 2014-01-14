@@ -14,12 +14,12 @@ pwd_three() {
 }
 # http://martinfitzpatrick.name/article/add-git-branch-name-to-terminal-prompt-mac
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 # change command prompt
 #export PS1='$(pwd_three) \e[0;35m\$\e[m '
 PS1='$(pwd_three)'
-PS1=$PS1' ($(parse_git_branch))'
+PS1=$PS1'$(parse_git_branch)'
 PS1=$PS1' \[$(tput setaf 5)\]\$\[$(tput sgr0)\] '
 export PS1
 
