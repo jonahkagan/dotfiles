@@ -1,6 +1,6 @@
 [user]
-	name = jonahkagan
-	email = jonah.kagan@getclever.com
+	name = Jonah Kagan
+	email = jonah.kagan@clever.com
 
 [alias]
   st = status
@@ -23,4 +23,6 @@
 [push]
 	default = simple
 [hub]
-	protocol = https
+	protocol = ssh
+[core]
+	editor = /usr/local/bin/vim

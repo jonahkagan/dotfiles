@@ -31,6 +31,8 @@ export PS1
 
 # alias hub to `git`
 eval "$(hub alias -s)"
+# enable git tab completion
+source /usr/local/Cellar/git/1.8.3.2/etc/bash_completion.d/git-completion.bash
 
 set show-all-if-ambiguous on
 
@@ -106,3 +108,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 
+source /usr/local/bin/virtualenvwrapper.sh
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
