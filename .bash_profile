@@ -97,6 +97,8 @@ done
 }
 alias rm='del'
 
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+
 # MacPorts Installer addition on 2010-12-08_at_22:16:11: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
@@ -110,3 +112,5 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 source /usr/local/bin/virtualenvwrapper.sh
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
