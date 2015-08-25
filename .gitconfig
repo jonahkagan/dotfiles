@@ -25,4 +25,4 @@
 [hub]
 	protocol = ssh
 [core]
-	editor = /usr/local/bin/vim
+	editor = vim
