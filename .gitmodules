@@ -49,6 +49,3 @@
 [submodule ".vim/bundle/vim-scala"]
 	path = .vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
-[submodule ".vim/bundle/vim-niji"]
-	path = .vim/bundle/vim-niji
-	url = git://github.com/amdt/vim-niji.git
