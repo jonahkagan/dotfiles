@@ -26,13 +26,12 @@ export PS1
 # init opam
 #which opam && eval `opam config -env`
 
-# source nvm
-. ~/nvm/nvm.sh
-
 # alias hub to `git`
-eval "$(hub alias -s)"
+#eval "$(hub alias -s)"
 # enable git tab completion
-source /usr/local/Cellar/git/1.8.3.2/etc/bash_completion.d/git-completion.bash
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
 set show-all-if-ambiguous on
 
@@ -59,9 +58,6 @@ alias ls='ls -FG'
 alias ll="ls -alh"
 export CLI_COLOR=1
 export LS_COLORS=ExFxCxDxBxegedabagacad
-
-# Import Clever settings
-source ~/.clever_bash
 
 # safe rm
 #alias rm="rm -i"
@@ -97,7 +93,7 @@ done
 }
 alias rm='del'
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 
 # MacPorts Installer addition on 2010-12-08_at_22:16:11: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -109,8 +105,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # For Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+if [ -f ~/.clever_bash ]; then source ~/.clever_bash; else echo 'ERROR: Could not find ~/.clever_bash'; fi
 
-source /usr/local/bin/virtualenvwrapper.sh
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+export NVM_DIR="/Users/jonahkagan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if [ -f ~/.clever_bash ]; then source ~/.clever_bash; else echo 'ERROR: Could not find ~/.clever_bash'; fi

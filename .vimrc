@@ -1,4 +1,3 @@
-"
 " ~/.vimrc
 "
 " This is your Vim initialization file. It is read on Vim startup.
@@ -87,6 +86,9 @@ set autoindent
 call SetIndentSpaces(2)
 set expandtab
 
+autocmd FileType go call SetIndentSpaces(4)
+autocmd FileType go set noexpandtab
+
 autocmd FileType tex,pandoc,mkd call SetIndentSpaces(4)
 autocmd BufNewFile,BufReadPost *.coffee.md call SetIndentSpaces(4)
 
@@ -140,6 +142,9 @@ let g:CommandTSelectNextMap= ['<C-n>', '<C-j>', '<Esc>OB', '<Down>']
 
 " Make a Mongo query filetype
 autocmd BufNewFile,BufReadPost *.mql setlocal filetype=mongoql
+
+" Detect TypeScript
+autocmd BufNewFile,BufReadPost *.ts setlocal filetype=typescript
 
 "" Allow tab to be used for autocomplete
 "function! SuperCleverTab()
