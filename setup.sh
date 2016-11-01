@@ -1,0 +1,7 @@
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/dotfiles/.git_config ~/.git_config
+ln -s ~/dotfiles/.slate ~/.slate
+ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.vim ~/.vim
+git submodule init
+git submodule update
