@@ -33,6 +33,34 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+# override git checkout completion to only use local branches
+# https://cmetcalfe.ca/blog/git-checkout-autocomplete-local-branches-only.html
+_git_checkout ()
+{
+	__git_has_doubledash && return
+
+	case "$cur" in
+	--conflict=*)
+		__gitcomp "diff3 merge" "" "${cur##--conflict=}"
+		;;
+	--*)
+		__gitcomp "
+			--quiet --ours --theirs --track --no-track --merge
+			--conflict= --orphan --patch
+			"
+		;;
+	*)
+		# check if --track, --no-track, or --no-guess was specified
+		# if so, disable DWIM mode
+		local flags="--track --no-track --no-guess" track=1
+		if [ -n "$(__git_find_on_cmdline "$flags")" ]; then
+			track=''
+		fi
+		__gitcomp_nl "$(__git_heads '' $track)"
+		;;
+	esac
+}
+
 set show-all-if-ambiguous on
 
 # App aliases
@@ -109,4 +137,7 @@ if [ -f ~/.clever_bash ]; then source ~/.clever_bash; else echo 'ERROR: Could no
 
 export NVM_DIR="/Users/jonahkagan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-if [ -f ~/.clever_bash ]; then source ~/.clever_bash; else echo 'ERROR: Could not find ~/.clever_bash'; fi
+
+# Until Karabiner works, set key repeat here
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15

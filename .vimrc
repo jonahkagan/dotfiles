@@ -86,9 +86,6 @@ set autoindent
 call SetIndentSpaces(2)
 set expandtab
 
-autocmd FileType go call SetIndentSpaces(4)
-autocmd FileType go set noexpandtab
-
 autocmd FileType tex,pandoc,mkd call SetIndentSpaces(4)
 autocmd BufNewFile,BufReadPost *.coffee.md call SetIndentSpaces(4)
 
