@@ -29,9 +29,9 @@ export PS1
 # alias hub to `git`
 #eval "$(hub alias -s)"
 # enable git tab completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
 
 # override git checkout completion to only use local branches
 # https://cmetcalfe.ca/blog/git-checkout-autocomplete-local-branches-only.html
