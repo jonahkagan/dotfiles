@@ -133,7 +133,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # For Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-if [ -f ~/.clever_bash ]; then source ~/.clever_bash; else echo 'ERROR: Could not find ~/.clever_bash'; fi
+alias tidygit='git branch -vv | grep  ": gone]" | awk "{print \$1}" | xargs -r git branch -D'
 
 export NVM_DIR="/Users/jonahkagan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
