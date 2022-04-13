@@ -1,16 +1,17 @@
 [user]
 	name = Jonah Kagan
-	email = jonah.kagan@clever.com
+	email = jonah@voting.works
+;	signingkey = 0CF808E34A07E96B
 
-[alias]
-  st = status
-  commit = commit -v
-  c = commit -v
-  br = branch
-  co = checkout
-  lg = log -p
-  d = diff
-  ds = diff --staged
+;[alias]
+;  st = status
+;  commit = commit -v
+;  c = commit -v
+;  br = branch
+;  co = checkout
+;  lg = log -p
+;  d = diff
+;  ds = diff --staged
 
 [color]
   branch = auto
@@ -20,9 +21,13 @@
 [credential]
 	helper = osxkeychain
 
-[push]
-	default = simple
+;[push]
+;  default = simple
 [hub]
 	protocol = ssh
 [core]
 	editor = vim
+[fetch]
+	prune = true
+;[commit]
+;	gpgsign = true

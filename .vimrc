@@ -101,8 +101,8 @@ syntax enable
 set background=dark
 " Terminal.app needs to have solarized installed, and use the ansi
 " terminal type
-colorscheme solarized
-"colo lucius
+"colorscheme solarized
+colo lucius
 
 " keep swap files hidden away
 set backupdir=$HOME/.vim_swap//,/tmp

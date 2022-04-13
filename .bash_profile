@@ -141,3 +141,5 @@ export NVM_DIR="/Users/jonahkagan/.nvm"
 # Until Karabiner works, set key repeat here
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
